@@ -46,7 +46,7 @@ echo "PK 撮合可视化 静态服务已启动"
 echo "  项目根 : $ROOT"
 echo "  本机   : http://127.0.0.1:${PORT}/"
 echo "  分享   : http://${IP}:${PORT}/"
-echo "  BOSS   : /boss/* -> http://shjd-boss.bilibili.co/*"
+echo "  BOSS   : /boss/* -> https://boss.hdslb.com/*"
 echo "  dumps  : ./dumps/ 下 ${count} 个 json,访客打开上面链接即可在页面里直接选"
 if [ "$count" -eq 0 ]; then
   echo "  提示   : dumps/ 是空的,把要分享的 json 放进去再刷新页面。"
@@ -65,7 +65,7 @@ import urllib.error
 import urllib.request
 from http.server import SimpleHTTPRequestHandler, ThreadingHTTPServer
 
-BOSS_ORIGIN = 'http://shjd-boss.bilibili.co'
+BOSS_ORIGIN = 'https://boss.hdslb.com'
 BOSS_PROXY_PREFIX = '/boss'
 BOSS_OPENER = urllib.request.build_opener(urllib.request.ProxyHandler({}))
 

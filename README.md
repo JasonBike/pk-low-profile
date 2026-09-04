@@ -6,7 +6,7 @@
 
 打开页面根地址时，默认通过同源 `/boss/pk-match-kb/pk-kb/match_dump/{当天 yyyyMMdd}/index.json` 代理 BOSS 并打开最新一轮。顶部可直接选择其他日期，页面只替换日期目录；轮次仍按小时分组。
 
-`serve.sh` 将 `/boss/*` 固定代理到 `http://shjd-boss.bilibili.co/*`，每日索引及其中的 dump 地址都会转换为同源代理地址，避免浏览器 CORS；代理目标固定，不接受任意外部 URL。
+`serve.sh` 将 `/boss/*` 固定代理到 `https://boss.hdslb.com/*`，每日索引及其中的 dump 地址都会转换为同源代理地址，避免浏览器 CORS；代理目标固定，不接受任意外部 URL。
 
 ### 网络暴露约定
 
@@ -16,7 +16,7 @@
 
 直接双击 `index.html` 时仍可点「选择文件」或把 `.json` 拖进页面，适合索引/BOSS 不可用时本地排查。
 
-先拿 `sample.json` 试渲染效果。
+本仓库不附带 dump 数据；需要本地排查时，可通过「选择文件」或拖拽你自己的 `.json` 文件导入。
 
 选择成功后，文件名会以 `?dump=文件名` 写入当前 URL，解析后的 dump 同时保存在浏览器 IndexedDB 中。刷新页面时会按 URL 自动恢复；数据只保存在本机浏览器，不会上传。若浏览器缓存被清理，需要重新选择原文件。
 
